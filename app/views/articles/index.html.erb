@@ -3,8 +3,8 @@
 <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Description</th>
+      <th align="left">Title</th>
+      <th align="left">Description</th>
     </tr>
   </thead>
 
@@ -13,7 +13,7 @@
       <tr>
         <td><%= article.title %></td>
         <td><%= article.description %></td>
-        <td><i>placeholder</i></td>
+        <td><a href="<%= article.id %>">Show</a></td>
       </tr>
     <% end %>
   </tbody>

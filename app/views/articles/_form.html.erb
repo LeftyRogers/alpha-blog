@@ -1,8 +1,31 @@
-<%= render 'errors' %>
+<div class="container">
 
-<%= form_with(model: @article, local: true) do |f| %>
-  <p> <b><%= f.label :title %>:</b> <%= f.text_field :title, size: "32" %> </p>
-  <p> <b><%= f.label :description %>:</b><br><%= f.text_area :description, size: "64x4" %> </p>
-  <p> <%= f.submit %> </p>
-<% end %>
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <%= render 'shared/errors' %>
 
+      <%= form_with(model: @article, class: "shadow p-3 mb-3 bg-info rounded", local: true) do |f| %>
+        <div class="form-group row">
+          <%= f.label :title, class: "col-2 col-form-label" %>
+          <div class="col-10">
+            <%= f.text_field :title, class: "form-control", placeholder: "Article title" %>
+          </div>
+        </div>
+  
+        <div class="form-group row">
+          <%= f.label :description, class: "col-2 col-form-label" %>
+          <div class="col-10">
+            <%= f.text_area :description, rows: 10, class: "form-control", placeholder: "Article description" %>
+          </div>
+        </div>
+  
+        <div class="form-group row justify-content-center">
+          <%= f.submit class: "btn btn-outline-dark btn-lg" %>
+        </div>
+      <% end %>
+
+      <%= link_to "[ Return to articles listing ]", articles_path, class: "text-info" %>
+    </div>
+  </div>
+
+</div>

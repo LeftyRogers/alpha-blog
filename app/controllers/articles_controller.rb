@@ -23,6 +23,9 @@ class ArticlesController < ApplicationController
     # permit(:title, :description) means that only title and description will be set upon creation
     @article = Article.new(strong_parameters)
 
+    # Temporary fix until proper solution has been written:
+    @article.user = User.first
+
     if @article.save
       flash[:notice] = "Article has been saved"
       redirect_to @article

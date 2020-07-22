@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   # redirect route for signup to the new method
   get 'signup', to: 'users#new'
   post 'users', to: 'users#create'
-  resource :users, except: [:new]
+  resources :users, except: [:new]
 end
